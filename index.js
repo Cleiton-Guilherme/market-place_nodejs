@@ -1,8 +1,7 @@
 const express = require("express");
 const connectToDatabase = require("./src/database/database"); //arquivo de conexão com o banco
-const usuario = require("./src/router/usuario.router");
+const usuario = require("./src/router/usuario.router");//arquivo de rota do usuario
 
-const usuario = require("./src/router/usuario.router"); //arquivo de rota do usuario
 
 const app = express();
 

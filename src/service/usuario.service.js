@@ -21,14 +21,14 @@ const removeUserService = (id) => {
 }
 
 const addUserAddressService = (id, endereco) => {
-    
+
 } 
 
 const removeUserAddressService = (id) => {
 
 }
 
-const addUserFavProductService = (id, produto) = {
+const addUserFavProductService = (id, produto) => {
 
 }
 
