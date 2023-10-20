@@ -2,7 +2,7 @@ const userService = require("../service/usuario.service");
 
 const findUserByIdController = async (req, res) => {
     try{
-        const user = await useService.findUserByIdService(req.params,id);
+        const user = await useService.findUserByIdService(req.params.id);
 
         if(!user){
             return res.status(404).send({message: "Usuario não encontrado, tente novamente"});
@@ -66,11 +66,14 @@ const removeUserController = async (req, res) => {
 
         const deletedUser = await userService.removeUserService(req.params.id);
 
-        if(deletedUser.deletedCount > 0){
-            res.status(200).send({ message: `Sucesso, usuario deletado!`});  
-        }else{
-            res.status(404).send({ message: `Usuário não encontrado, tente novamente!`});  
-        }
+        console.log(deletedUser);
+        res.status(200).send({ message: `Sucesso, usuario deletado!`});  
+
+        //if(deletedUser.deletedCount > 0){
+          //  res.status(200).send({ message: `Sucesso, usuario deletado!`});  
+        //}else{
+          //  res.status(404).send({ message: `Usuário não encontrado, tente novamente!`});  
+       // }
 
     }catch (err){
         console.log(`erro: ${err.message}`);
