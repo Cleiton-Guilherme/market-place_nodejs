@@ -67,7 +67,7 @@ const removeUserController = async (req, res) => {
         const deletedUser = await userService.removeUserService(req.params.id);
 
         console.log(deletedUser);
-        
+
         if(deletedUser == null){
             res.status(404).send({ message: `Usuário não encontrado, tente novamente!`});   
         }else{
@@ -82,9 +82,14 @@ const removeUserController = async (req, res) => {
 
 const addUserAddressController = async (req, res) => {
     try{
+        req.body.createdAt = new Date();
+        const endereco = await userService.addUserAddressService(req.params.id, req.body);
 
-
-
+        if(endereco.ok == 1){
+            res.status(201).send({ message: ` Endereço adicionado com Sucesso!`});  
+        }else{
+            res.status(400).send({ message: `Algo deu errado no endereço, tente novemente!`});   
+        }
 
     }catch (err){
         console.log(`erro: ${err.message}`);
@@ -94,9 +99,13 @@ const addUserAddressController = async (req, res) => {
 
 const removeUserAddressController = async (req, res) => {
     try{
+        const endereco  = await userService.removeUserAddressService(req.body.id, req.body.addressId);
 
-
-
+        if(endereco.ok == 1){
+            res.status(200).send({ message: ` Endereço removido com Sucesso!`});  
+        }else{
+            res.status(400).send({ message: `Algo deu errado no endereço,  não foi removido, tente novemente!`});   
+        }
 
     }catch (err){
         console.log(`erro: ${err.message}`);
