@@ -13,7 +13,7 @@ module.exports = async (req, res, next) => {
     if(parts.length !== 2){
         return res.status(401).send({ message:" token invalido!"});
     }
-    const [scheme, token] = parts;
+    const [schema, token] = parts;
 
     if(!/^Bearer$/i.test(schema)){
         return res.status(401).send({ message: "Token malformado!"});
@@ -33,5 +33,5 @@ module.exports = async (req, res, next) => {
         req.userId = decoded.id;
 
         return next();
-    })
-}
+    });
+};
