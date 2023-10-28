@@ -12,4 +12,6 @@ router.put("/update/:id", authMiddleware, categoriaController.updateCategoriaCon
 
 router.delete("/delete/:id", authMiddleware, categoriaController.deleteCategoriaController);
 
+module.exports = router;
+
 
