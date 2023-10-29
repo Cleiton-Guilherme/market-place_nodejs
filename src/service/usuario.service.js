@@ -31,7 +31,7 @@ const addUserAddressService = (id, endereco) => {
             }
         },
         {
-            newResult: true //retorna o documento atualizado
+            rawResult: true, //retorna o documento atualizado
         }
     );
 } 
@@ -49,7 +49,7 @@ const removeUserAddressService = (id, addressId) => {
             }
         },
         {
-            newResult: true //retorna o documento atualizado
+            rawResult: true, //retorna o documento atualizado
         }
     );
 }

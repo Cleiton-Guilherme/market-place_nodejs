@@ -1,4 +1,4 @@
-const jwt = require("jsonwebtoken");
+const jwt = require ("jsonwebtoken");
 const { findUserByIdService } = require("../service/usuario.service");
 
 module.exports = async (req, res, next) => {
@@ -11,7 +11,7 @@ module.exports = async (req, res, next) => {
     const parts = authHeader.split(" "); //["Bearer, <Token>"]
 
     if(parts.length !== 2){
-        return res.status(401).send({ message:" token invalido!"});
+        return res.status(401).send({ message:" token invalido!" });
     }
     const [schema, token] = parts;
 
@@ -24,7 +24,7 @@ module.exports = async (req, res, next) => {
             return res.status(500).send({ message: "Token Invalido!"});
 
         }
-        const  user = await findUserByIdService(decoded.id);
+        const user = await findUserByIdService(decoded.id);
 
         if(!user || !user.id ){
             return res.status(401).send({ message: "Token Invalido!"});

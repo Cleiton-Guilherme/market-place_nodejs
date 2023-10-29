@@ -137,9 +137,6 @@ const addUserFavProductController = async (req, res) => {
 const removeUserFavProductController = async (req, res) => {
     try{
 
-
-
-
     }catch (err){
         console.log(`erro: ${err.message}`);
         return res.status(500).send({ message: `Erro inesperado tente novamente!`});  
