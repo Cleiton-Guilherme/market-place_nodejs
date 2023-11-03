@@ -21,7 +21,7 @@ const validaUsuario = (req, res, next) => {
     return next();
 }
 
-const validaProduto =(req, res, next) => {
+const validaProduto = (req, res, next) => {
     let erros =  []; // var para acumular os erros
 
     if(!req.body.nome){
@@ -59,8 +59,61 @@ const validaCategoria = (req, res, next) => {
     return next();
 }
 
+const validaPedido = (req, res, next) => {
+    let erros =  []; // var para acumular os erros
+
+    if(!req.body.precoTotal){
+        erros.push("precoTotal");
+    }
+
+    if(!req.body.frete){
+        erros.push("frete");
+    }
+
+    if(!req.body.concluido){
+        erros.push("concluido");
+    }
+
+    //testando quantos erros temos tomando decisoes em relação a isso
+    if(erros.length == 0){
+        return next();
+    }else{
+        if(erros. length > 1){
+            return res.status(400).send({ message: `Os campos ${erros} precisam ser preenchidos! `});
+        }else{
+            return res.status(400).send({ message: `O campo ${erros} precisa ser preenchido! `});
+        }
+    }
+}
+
+const validaCarrinho = (req, res, next) => {
+    let erros =  []; // var para acumular os erros
+
+    if(!req.body.precoTotal){
+        erros.push("precoTotal");
+    }
+
+    if(!req.body.frete){
+        erros.push("frete");
+    }
+
+    //testando quantos erros temos tomando decisoes em relação a isso
+    if(erros.length == 0){
+        return next();
+    }else{
+        if(erros. length > 1){
+            return res.status(400).send({ message: `Os campos ${erros} precisam ser preenchidos! `});
+        }else{
+            return res.status(400).send({ message: `O campo ${erros} precisa ser preenchido! `});
+        }
+    }
+} 
+  
 module.exports = {
     validaUsuario,
     validaProduto,
-    validaCategoria
+    validaCategoria,
+    validaPedido,
+    validaCarrinho,
+
 }
