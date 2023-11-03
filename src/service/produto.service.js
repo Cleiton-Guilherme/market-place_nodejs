@@ -19,7 +19,7 @@ const deleteProductService = (id) => {
     return Produto.findByIdAndRemove(id);
 }
 
-const addCategoriaProdutoService = (id, categoria ) => {
+const addCategoriaProdutoService = (id, categoria) => {
     return Produto.findOneAndUpdate(
         {
             _id : id
