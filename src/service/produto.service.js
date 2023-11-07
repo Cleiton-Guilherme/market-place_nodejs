@@ -3,8 +3,8 @@ const Produto = require("../model/Produto");
 const findProductByIdService = (id) => {
     return Produto.findByYd(id);
 }
-const findAllProductsService = () => {
-    return Produto.find();
+const findAllProductsService = (limit, offset) => {
+    return Produto.find().limit(limit).skip(offset);
 }
 
 const createProductService = (body) => {
