@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "Market-Place",
-    "dateExported": "2023-11-02T18:42:34.229Z",
+    "dateExported": "2023-11-08T17:40:59.502Z",
     "version": "1.1",
     "folders": [
         {
@@ -71,11 +71,11 @@
             "colId": "3cc74482-8b67-4fe8-a42c-2274ec583005",
             "containerId": "5fa94ff2-b3fa-4c28-83f7-c5565de06822",
             "name": "FindByID",
-            "url": "{{BaseURL}}{{Port}}/usuario/findById/6536d889f2b302e49eec7dc4",
+            "url": "{{BaseURL}}{{Port}}/usuario/findById/6536dbc8d2b16f1091b4b93e",
             "method": "GET",
             "sortNum": 30000,
             "created": "2023-10-20T19:49:15.732Z",
-            "modified": "2023-10-29T21:10:37.249Z",
+            "modified": "2023-11-06T17:39:34.266Z",
             "headers": [],
             "params": [],
             "auth": {
@@ -93,12 +93,12 @@
             "method": "POST",
             "sortNum": 40000,
             "created": "2023-10-20T20:22:40.180Z",
-            "modified": "2023-10-29T21:04:20.908Z",
+            "modified": "2023-11-02T19:36:05.469Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nome\": \"leo9 \",\n  \"email\": \"leo9@email.com\",\n  \"senha\": \"senhasecreta123\",\n  \"imagem\": \"img.leosite.com.br/leo.jpg\"\n}",
+                "raw": "{\n  \"nome\": \"leo10 \",\n  \"email\": \"leo10@email.com\",\n  \"senha\": \"senhasecreta123\",\n  \"imagem\": \"img.leosite.com.br/leo.jpg\",\n  \"admin\": true\n}",
                 "form": []
             },
             "tests": []
@@ -138,13 +138,17 @@
             "method": "POST",
             "sortNum": 80000,
             "created": "2023-10-23T19:46:48.900Z",
-            "modified": "2023-10-28T21:47:26.601Z",
+            "modified": "2023-11-07T19:57:02.300Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"rua\": \"rua teste 3\",\n  \"numero\": 123,\n  \"CEP\": \"11235-090\"\n  }",
+                "raw": "[\n{\n  \"rua\": \"rua teste 2\",\n  \"numero\": 123,\n  \"CEP\": \"11235-090\"\n  },\n  {\n  \"rua\": \"rua teste 3\",\n  \"numero\": 123,\n  \"CEP\": \"11235-090\"\n  },\n  {\n  \"rua\": \"rua teste 4\",\n  \"numero\": 12345,\n  \"CEP\": \"11235-090\"\n  }\n  ]\n  ",
                 "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
             },
             "tests": []
         },
@@ -172,13 +176,24 @@
             "colId": "3cc74482-8b67-4fe8-a42c-2274ec583005",
             "containerId": "5f135777-b859-4bbf-8429-17b2befc1240",
             "name": "FindAll",
-            "url": "{{BaseURL}}{{Port}}/produto/findAll",
+            "url": "{{BaseURL}}{{Port}}/produto/findAll?limit=5&offset=0",
             "method": "GET",
             "sortNum": 120000,
             "created": "2023-10-27T18:22:46.240Z",
-            "modified": "2023-10-31T17:14:17.020Z",
+            "modified": "2023-11-07T18:06:47.497Z",
             "headers": [],
-            "params": [],
+            "params": [
+                {
+                    "name": "limit",
+                    "value": "5",
+                    "isPath": false
+                },
+                {
+                    "name": "offset",
+                    "value": "0",
+                    "isPath": false
+                }
+            ],
             "auth": {
                 "type": "bearer",
                 "bearer": "{{token}}"
@@ -194,7 +209,7 @@
             "method": "POST",
             "sortNum": 130000,
             "created": "2023-10-27T18:25:17.450Z",
-            "modified": "2023-10-29T21:07:45.188Z",
+            "modified": "2023-11-06T18:21:52.997Z",
             "headers": [],
             "params": [],
             "body": {
@@ -231,12 +246,12 @@
             "method": "POST",
             "sortNum": 150000,
             "created": "2023-10-27T18:33:14.965Z",
-            "modified": "2023-10-31T20:39:23.313Z",
+            "modified": "2023-11-02T20:53:02.519Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nome\": \"produto 3\",\n  \"descricao\": \"produto enlatado de otima qualidade\",\n  \"precoUnitario\": 9.5,\n  \"imagem\": \"img.siteimgs/produto1.jpg\",\n  \"codigoBarra\": 54321\n}",
+                "raw": "{\n  \"nome\": \"produto 8\",\n  \"descricao\": \"produto enlatado de otima qualidade\",\n  \"precoUnitario\": 10,\n  \"imagem\": \"img.siteimgs/produto1.jpg\",\n  \"codigoBarra\": 54787321,\n  \"categorias\": [\n    { \"_id\": \"65413ed259e79c78f36d0075\"}\n    ]\n}",
                 "form": []
             },
             "auth": {
@@ -431,7 +446,7 @@
             "method": "POST",
             "sortNum": 230000,
             "created": "2023-10-31T17:42:39.274Z",
-            "modified": "2023-10-31T17:52:59.543Z",
+            "modified": "2023-11-07T20:33:27.841Z",
             "headers": [],
             "params": [],
             "body": {
@@ -477,7 +492,7 @@
             "method": "POST",
             "sortNum": 250000,
             "created": "2023-10-31T20:31:22.701Z",
-            "modified": "2023-10-31T21:07:17.586Z",
+            "modified": "2023-11-08T17:25:28.081Z",
             "headers": [],
             "params": [],
             "body": {
@@ -541,7 +556,7 @@
             "method": "POST",
             "sortNum": 300000,
             "created": "2023-11-01T17:37:20.193Z",
-            "modified": "2023-11-01T17:46:22.946Z",
+            "modified": "2023-11-07T20:24:28.297Z",
             "headers": [],
             "params": [],
             "body": {
@@ -623,12 +638,12 @@
             "method": "POST",
             "sortNum": 340000,
             "created": "2023-11-01T20:11:01.515Z",
-            "modified": "2023-11-01T20:24:08.242Z",
+            "modified": "2023-11-03T19:57:22.063Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"produtos\": [\n    {\"_id\": \"65413ed259e79c78f36d0075\", \"quantidade\": 1}\n    ],\n    \"precoTotal\": 200,\n    \"frete\": 15.25,\n    \"concluido\": false\n}",
+                "raw": "{\n  \"produtos\": [\n    {\"_id\": \"65413ed259e79c78f36d0075\", \"quantidade\": 1}\n    ],\n    \"precoTotal\": 200,\n    \"frete\": 15.25\n}",
                 "form": []
             },
             "auth": {
