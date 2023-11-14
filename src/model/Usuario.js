@@ -9,7 +9,7 @@ const UsuarioSchema = new mongoose.Schema({
     enderecos: [
         {
             rua: { type: String, required: true},
-            numero: {type: Number, required: true},
+            numero: { type: Number, required: true},
             complemento: { type: String, required: false},
             CEP: { type: String, required: true},
             createdAt: { type: Date, required: true, default: Date.now()},

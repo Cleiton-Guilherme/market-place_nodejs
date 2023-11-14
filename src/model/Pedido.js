@@ -7,7 +7,7 @@ const PedidoSchema = new mongoose.Schema({
             quantidade: { type: Number, required: true }
         },
     ],
-    createAt: { type: Date, required: true, default: Date.now()},
+    createAt: { type: Date, required: true, default: Date.now() },
     precoTotal: { type: Number, required: true},
     frete: { type: Number, required: true },
     userId: { type: mongoose.Schema.Types.ObjectId, required: true, ref: "usuarios" },

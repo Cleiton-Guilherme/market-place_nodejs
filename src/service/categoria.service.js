@@ -13,7 +13,7 @@ const createCategoriaService = (body) => {
     return Categoria.create(body);
 };
 
-const updateCategoriaService = (id,body) => {
+const updateCategoriaService = (id, body) => {
     return Categoria.findByIdAndUpdate(id, body, { returnDocument: "after" });
 };
 

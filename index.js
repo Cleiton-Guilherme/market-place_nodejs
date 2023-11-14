@@ -56,9 +56,9 @@ app.post("/login", async (req, res) => {
         return res.status(400).send({ message: "Senha invalida"});
       }
       res.send(user); 
-    }catch(err){
+      }catch(err){
         console.log(`erro: ${err}`);
-    }
+      }
 });
 
 app.listen(port, () => {

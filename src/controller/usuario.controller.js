@@ -2,7 +2,7 @@ const userService = require("../service/usuario.service");
 
 const findUserByIdController = async (req, res) => {
     try{
-        const user = await useService.findUserByIdService(req.params.id);
+        const user = await userService.findUserByIdService(req.params.id);
 
         if(!user){
             return res.status(404).send({message: "Usuario não encontrado, tente novamente"});
@@ -47,7 +47,7 @@ const updateUserController = async (req, res) => {
             return res.status(400).send({ message: 'O campo Nome precisa ser preenchido!'});
         }
 
-        return res.send(await useService.updateUserService(req.params.id, req.body));
+        return res.send(await userService.updateUserService(req.params.id, req.body));
 
     }catch (err){
         console.log(`erro: ${err.message}`);
