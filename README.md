@@ -27,6 +27,30 @@ Todos os endpoints da nossa aplicação serão listados abaixo
 | 401    | retorna o erro de autenticacao                               |
 | 404    | retorna uma mensagem informando que não encontrou o usuario |
 
+
+````javascript
+const findUserByIdController = async (req, res) => {
+    try{
+        const user = await userService.findUserByIdService(req.params.id);
+
+        if(!user){
+            return res.status(404).send({message: "Usuario não encontrado, tente novamente"});
+        }
+
+        return res.status(200).send(user);
+
+    }catch (err){
+        if(err.kind == "ObjectId"){
+            console.log(err.kind == "ObjectId");
+            return res.status(400).send({ message: `ID informado, esta incorreto, tente novamente!`});  
+        }
+
+        console.log(`erro: ${err.message}`);
+        return res.status(500).send({ message: `Erro inesperado tente novamente!`});  
+    }
+};
+````
+
 ### Produto
 
 Todos os endpoints de produto listado abaixo
