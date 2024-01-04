@@ -1,5 +1,6 @@
 const express = require("express");
-require("dotenv").config();
+require 
+("dotenv").config();
 const cors = require("cors");
 
 const connectToDatabase = require("./src/database/database"); //arquivo de conexão com o banco
